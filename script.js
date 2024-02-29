@@ -4,6 +4,7 @@ let currentPlayer = "circle";
 
 function init() {
     render();
+    currentPlayerCard();
 }
 
 function render() {
@@ -21,20 +22,28 @@ function render() {
     contentDiv.innerHTML = tableHtml;
 }
 
-// function fillField(index, tdElement) {
-//     if (!fields[index]) {
-//         fields[index] = currentPlayer;
-//         if (currentPlayer === "circle") {
-//             tdElement.innerHTML = generateCircleSVG();
-//             currentPlayer = "cross";
-//         } else {
-//             tdElement.innerHTML = generateCrossSVG();
-//             currentPlayer = "circle";
-//         }
-//         // Entfernen des onclick-Attributs, um zu verhindern, dass das Feld erneut belegt wird
-//         tdElement.removeAttribute("onclick");
-//     }
-// }
+function currentPlayerCard() {
+    document.getElementById("currentPlayerCircle").innerHTML =
+        generateCircleSVG();
+    document.getElementById("currentPlayerCross").innerHTML =
+        generateCrossSVG();
+    if (currentPlayer == "circle") {
+        document.getElementById("currentPlayerCircle").classList.add("active");
+        document
+            .getElementById("currentPlayerCross")
+            .classList.remove("active");
+    } else {
+        document
+            .getElementById("currentPlayerCircle")
+            .classList.remove("active");
+        document.getElementById("currentPlayerCross").classList.add("active");
+    }
+}
+
+function neustartSpiel() {
+    fields = [null, null, null, null, null, null, null, null, null];
+    render();
+}
 
 function generateCircleSVG() {
     const circleColor = "#00B0EF";
@@ -175,4 +184,5 @@ function handleClick(index, tdElement) {
             }
         }
     }
+    currentPlayerCard();
 }

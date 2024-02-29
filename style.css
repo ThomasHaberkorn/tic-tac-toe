@@ -10,7 +10,7 @@ h1 {
     text-align: center;
 }
 #content {
-    margin-top: 200px;
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,39 +49,53 @@ table tr td:last-child {
     border-right: 0;
 }
 
-.circle {
-    color: blue;
+.currentPlayer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.cross {
-    color: red;
+#currentPlayerCircle {
+    margin-right: 15px;
 }
 
-/* 
-body {
-    background-color: #323232;
-    font-family: 'Open Sans', sans-serif;
-  }
-  
-  table {
-    border-collapse: separate;
-    border-spacing: 0;
-    border: 5px solid white;
-  }
-  
-  table, th, td {
-    border: 0;
-  }
-  
-  td {
-    padding: 0;
-  }
-  
-  .circle, .cross {
-    color: white;
-  }
-  
-  .circle::before, .cross::before {
-    content: attr(data-content);
-  }
-   */
+#currentPlayerCross {
+    margin-left: 15px;
+}
+
+.active {
+    padding-top: 5px;
+    padding-left: 3.5px;
+
+    width: 75px;
+    height: 75px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.resetButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mt-48 {
+    margin-top: 48px;
+}
+
+/* Stil für den Button */
+button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Hintergrundfarbe */
+    color: white; /* Textfarbe */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: background-color 0.3s ease; /* Animationseffekt */
+}
+
+/* Stil für den Button beim Hovern */
+button:hover {
+    background-color: #0056b3; /* Dunklere Hintergrundfarbe */
+}
